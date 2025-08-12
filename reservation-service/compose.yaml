@@ -1,0 +1,10 @@
+services:
+  postgres:
+    image: 'postgres:16'
+    environment:
+      - 'POSTGRES_DB=reservationdb'
+      - 'POSTGRES_PASSWORD=secret'
+      - 'POSTGRES_USER=reservationuser'
+      - 'PGPASSWORD=secret'
+    ports:
+      - '5432:5432'

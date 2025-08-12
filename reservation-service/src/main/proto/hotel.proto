@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.reactive.hotel.grpc";
+option java_outer_classname = "HotelServiceProto";
+
+package hotel;
+
+
+service HotelService {
+  // Check if a room is available for a given date range
+  rpc CheckRoomAvailability(RoomAvailabilityRequest) returns (RoomAvailabilityResponse);
+
+}
+
+// -------- Requests --------
+
+message RoomAvailabilityRequest {
+  int32 hotelId = 1;
+  int32 roomId = 2;
+}
+
+// -------- Responses --------
+
+message RoomAvailabilityResponse {
+  bool available = 1;
+}
